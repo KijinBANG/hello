@@ -1,5 +1,7 @@
 import React from 'react';
-import { arc } from 'd3';
+import { BackgroundCircle } from './components/BackgroundCircle';
+import { Eyes } from './components/Eyes';
+import { Mouth } from './components/Mouth';
 import './App.css';
 
 const width = 960;
@@ -10,12 +12,8 @@ const strokeWidth = 20;
 const eyeOffsetX = 90;
 const eyeOffsetY = 100;
 const eyeRadius = 40;
-
-const mouthArc = arc()
-  .innerRadius(90)
-  .outerRadius(100)
-  .startAngle(Math.PI / 2)
-  .endAngle((3*Math.PI) / 2)
+const mouthWidth = 20;
+const mouthRadius = 140;
 
 const App = () => {
   return (
@@ -27,25 +25,19 @@ const App = () => {
         // transform={`translate(${centerX}, ${centerY}) rotate(45)`}
         transform={`translate(${centerX}, ${centerY})`}
       >
-        <circle 
-          r={centerY - strokeWidth / 2}
-          fill='yellow'
-          stroke='black'
-          stroke-width={strokeWidth}
-        ></circle>
-        <circle 
-          cx={- eyeOffsetX}
-          cy={- eyeOffsetY}
-          r={eyeRadius}
-        ></circle>
-        <circle 
-          cx={+ eyeOffsetX}
-          cy={- eyeOffsetY}
-          r={eyeRadius}
-        ></circle>
-        <path 
-          d={mouthArc()}
-        ></path>
+        <BackgroundCircle 
+          radius={centerY - strokeWidth / 2}
+          strokeWidth={strokeWidth}
+        />
+        <Eyes
+          eyeOffsetX={eyeOffsetX}
+          eyeOffsetY={eyeOffsetY}
+          eyeRadius={eyeRadius}
+        />
+        <Mouth
+          mouthRadius={mouthRadius}
+          mouthWidth={mouthWidth}
+        />
       </g>
     </svg>
   );
