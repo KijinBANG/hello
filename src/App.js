@@ -1,46 +1,43 @@
 import React from 'react';
 import { BackgroundCircle } from './components/BackgroundCircle';
 import { Eyes } from './components/Eyes';
+import { FaceContainer } from './components/FaceContainer';
 import { Mouth } from './components/Mouth';
-import './App.css';
 
-const width = 960;
-const height = 500;
-const centerX = width / 2;
-const centerY = height / 2;
-const strokeWidth = 20;
-const eyeOffsetX = 90;
-const eyeOffsetY = 100;
-const eyeRadius = 40;
-const mouthWidth = 20;
-const mouthRadius = 140;
-
-const App = () => {
+const App = ({
+  width,
+  height,
+  centerX,
+  centerY,
+  strokeWidth,
+  eyeOffsetX,
+  eyeOffsetY,
+  eyeRadius,
+  mouthRadius,
+  mouthWidth
+}) => {
   return (
-    <svg
-      width={width} 
+    <FaceContainer 
+      width={width}
       height={height}
+      centerX={centerX}
+      centerY={centerY}
     >
-      <g
-        // transform={`translate(${centerX}, ${centerY}) rotate(45)`}
-        transform={`translate(${centerX}, ${centerY})`}
-      >
-        <BackgroundCircle 
-          radius={centerY - strokeWidth / 2}
-          strokeWidth={strokeWidth}
-        />
-        <Eyes
-          eyeOffsetX={eyeOffsetX}
-          eyeOffsetY={eyeOffsetY}
-          eyeRadius={eyeRadius}
-        />
-        <Mouth
-          mouthRadius={mouthRadius}
-          mouthWidth={mouthWidth}
-        />
-      </g>
-    </svg>
+      <BackgroundCircle
+        radius={centerY - strokeWidth / 2}
+        strokeWidth={strokeWidth}
+      />
+      <Eyes
+        eyeOffsetX={eyeOffsetX}
+        eyeOffsetY={eyeOffsetY}
+        eyeRadius={eyeRadius}
+      />
+      <Mouth
+        mouthRadius={mouthRadius}
+        mouthWidth={mouthWidth}
+      />
+    </FaceContainer>
   );
-}
+};
 
 export default App;
