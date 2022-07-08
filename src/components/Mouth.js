@@ -9,11 +9,11 @@ export const Mouth = ({mouthRadius, mouthWidth}) => {
     return (
       <>
         <circle 
-          cx={mouthRadius + 10}
+          cx={mouthRadius + mouthWidth / 2}
           r={mouthWidth / 2}
         ></circle>
         <circle 
-          cx={-(mouthRadius + 10)}
+          cx={-(mouthRadius + mouthWidth / 2)}
           r={mouthWidth / 2}
         ></circle>
         <path 

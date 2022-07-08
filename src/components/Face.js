@@ -1,10 +1,10 @@
 import React from 'react';
-import { BackgroundCircle } from './components/BackgroundCircle';
-import { Eyes } from './components/Eyes';
-import { FaceContainer } from './components/FaceContainer';
-import { Mouth } from './components/Mouth';
+import { BackgroundCircle } from './BackgroundCircle';
+import { Eyes } from './Eyes';
+import { FaceContainer } from './FaceContainer';
+import { Mouth } from './Mouth';
 
-const App = ({
+export const Face = ({
   width,
   height,
   centerX,
@@ -39,5 +39,3 @@ const App = ({
     </FaceContainer>
   );
 };
-
-export default App;

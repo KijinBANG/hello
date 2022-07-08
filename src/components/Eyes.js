@@ -12,5 +12,5 @@ export const Eyes = ({ eyeOffsetX, eyeOffsetY, eyeRadius }) => {
         r={eyeRadius}
       ></circle>
       </>
-    )
-}
+    );
+};

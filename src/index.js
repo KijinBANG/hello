@@ -1,33 +1,33 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import { range } from 'd3';
+import { Face } from './components/Face';
 import reportWebVitals from './reportWebVitals';
 
-const width = 960;
-const height = 500;
+const width = 166;
+const height = 166;
+
+const array = range(10 * 5);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <>
-    {/*
   <React.StrictMode>
-    <App />
+    { array.map(() => (
+      <Face
+        width={width}
+        height={height}
+        centerX={width / 2}
+        centerY={height / 2}
+        strokeWidth={10}
+        eyeOffsetX={25}
+        eyeOffsetY={30}
+        eyeRadius={5 + Math.random() * 15}
+        mouthWidth={5 + Math.random() * 10}
+        mouthRadius={20 + Math.random() * 15}
+      />
+    ))}
   </React.StrictMode>
-  */}
-    <App 
-      width={width}
-      height={height}
-      centerX={width / 2}
-      centerY={height / 2}
-      strokeWidth={20}
-      eyeOffsetX={90}
-      eyeOffsetY={100}
-      eyeRadius={40}
-      mouthWidth={20}
-      mouthRadius={140}
-    />
-  </>
 );
 
 // If you want to start measuring performance in your app, pass a function
