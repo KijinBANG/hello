@@ -14,7 +14,8 @@ export const Face = ({
   eyeOffsetY,
   eyeRadius,
   mouthRadius,
-  mouthWidth
+  mouthWidth, 
+  color
 }) => {
   return (
     <FaceContainer 
@@ -26,6 +27,7 @@ export const Face = ({
       <BackgroundCircle
         radius={centerY - strokeWidth / 2}
         strokeWidth={strokeWidth}
+        color={color}
       />
       <Eyes
         eyeOffsetX={eyeOffsetX}

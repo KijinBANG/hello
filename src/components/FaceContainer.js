@@ -1,4 +1,4 @@
-export const FaceContainer = ({children, width, height, centerX, centerY}) => {
+export const FaceContainer = ({children, width, height, centerX, centerY, color}) => {
     return (
       <svg
         width={width} 
